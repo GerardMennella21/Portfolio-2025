@@ -1,0 +1,315 @@
+import React from 'react';
+import {
+  Box,
+  Container,
+  Text,
+  VStack,
+  HStack,
+  Grid,
+  GridItem,
+  Card,
+  CardBody,
+  Heading,
+  Badge,
+  Divider,
+} from '@chakra-ui/react';
+import { motion } from 'framer-motion';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { usePageSEO } from '../hooks/usePageSEO';
+
+const MotionBox = motion.create(Box);
+
+const AnimatedSection: React.FC<{
+  children: React.ReactNode;
+  delay?: number;
+}> = ({ children, delay = 0 }) => {
+  const { ref, isVisible } = useScrollAnimation();
+  
+  return (
+    <MotionBox
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      transition={{ duration: 0.6, delay }}
+    >
+      {children}
+    </MotionBox>
+  );
+};
+
+const AboutPage: React.FC = () => {
+  usePageSEO({
+    title: 'About Me',
+    description: 'Learn more about Gerard Mennella, a passionate Full Stack Gen AI Engineer with over 4 years of experience building exceptional digital experiences.',
+    keywords: 'Gerard Mennella, About, Full Stack Developer, Gen AI Engineer, Experience, Skills, Biography',
+    ogTitle: 'About Gerard Mennella - Full Stack Gen AI Engineer',
+    ogDescription: 'Passionate Full Stack Gen AI Engineer with 4+ years of experience in React, TypeScript, Node.js, and AI integration.'
+  });
+  const skills = [
+    { name: 'JavaScript/TypeScript', level: 95 },
+    { name: 'React/Next.js', level: 90 },
+    { name: 'Node.js', level: 85 },
+    { name: 'Python', level: 80 },
+    { name: 'AI/ML Integration', level: 85 },
+    { name: 'PostgreSQL/MongoDB', level: 80 },
+    { name: 'AWS/Cloud Services', level: 75 },
+    { name: 'Docker/DevOps', level: 70 },
+  ];
+
+  const experiences = [
+    {
+      role: 'Senior Full Stack Developer',
+      company: 'Tech Innovation Corp',
+      period: '2022 - Present',
+      description: 'Leading development of AI-powered web applications using React, Node.js, and OpenAI API.',
+    },
+    {
+      role: 'Full Stack Developer',
+      company: 'Digital Solutions LLC',
+      period: '2020 - 2022',
+      description: 'Built scalable web applications and REST APIs serving thousands of users.',
+    },
+    {
+      role: 'Frontend Developer',
+      company: 'Creative Agency',
+      period: '2019 - 2020',
+      description: 'Created responsive, interactive websites using modern JavaScript frameworks.',
+    },
+  ];
+
+  return (
+    <Box pt="80px" minHeight="100vh">
+      <Container maxW="1200px" py={12}>
+        {/* Header Section */}
+        <AnimatedSection>
+          <VStack spacing={6} textAlign="center" mb={20}>
+            <Heading
+              size="2xl"
+              bgGradient="linear(to-r, brand.400, brand.600)"
+              bgClip="text"
+            >
+              About Me
+            </Heading>
+            <Text fontSize="lg" color="gray.300" maxW="800px" lineHeight="tall">
+              I'm a passionate Full Stack Gen AI Engineer with over 4 years of experience
+              building exceptional digital experiences. I specialize in creating innovative
+              solutions that combine traditional web development with cutting-edge AI technologies.
+            </Text>
+          </VStack>
+        </AnimatedSection>
+
+        {/* Main Content Grid */}
+        <Grid templateColumns={{ base: '1fr', lg: '2fr 1fr' }} gap={12} mb={20}>
+          {/* Left Column - Story */}
+          <GridItem>
+            <AnimatedSection delay={0.2}>
+              <VStack spacing={8} align="start">
+                <Heading size="lg" color="brand.400">
+                  My Story
+                </Heading>
+                
+                <Text color="gray.300" lineHeight="tall">
+                  My journey in technology started with a fascination for solving complex problems
+                  through code. Over the years, I've evolved from a curious developer to a seasoned
+                  engineer who thrives on pushing the boundaries of what's possible with modern web
+                  technologies.
+                </Text>
+
+                <Text color="gray.300" lineHeight="tall">
+                  The emergence of AI and machine learning has opened up incredible opportunities
+                  to create more intelligent, adaptive, and user-centric applications. I've dedicated
+                  significant time to mastering these technologies and integrating them seamlessly
+                  into full-stack solutions.
+                </Text>
+
+                <Text color="gray.300" lineHeight="tall">
+                  When I'm not coding, you can find me exploring the latest tech trends, contributing
+                  to open-source projects, or sharing knowledge with the developer community. I believe
+                  in continuous learning and the power of collaboration to drive innovation.
+                </Text>
+
+                <Divider borderColor="gray.700" />
+
+                <VStack spacing={4} align="start" w="full">
+                  <Heading size="md" color="brand.400">
+                    What I Bring
+                  </Heading>
+                  <Grid templateColumns="repeat(auto-fit, minmax(200px, 1fr))" gap={4} w="full">
+                    {[
+                      'Full-Stack Development',
+                      'AI/ML Integration',
+                      'System Architecture',
+                      'Performance Optimization',
+                      'Team Leadership',
+                      'Problem Solving',
+                    ].map((item) => (
+                      <Badge
+                        key={item}
+                        px={3}
+                        py={2}
+                        bg="gray.800"
+                        color="brand.400"
+                        fontSize="sm"
+                        borderRadius="md"
+                        textAlign="center"
+                      >
+                        {item}
+                      </Badge>
+                    ))}
+                  </Grid>
+                </VStack>
+              </VStack>
+            </AnimatedSection>
+          </GridItem>
+
+          {/* Right Column - Skills */}
+          <GridItem>
+            <AnimatedSection delay={0.4}>
+              <VStack spacing={8}>
+                <Heading size="lg" color="brand.400" alignSelf="start">
+                  Technical Skills
+                </Heading>
+                
+                <VStack spacing={4} w="full">
+                  {skills.map((skill, index) => (
+                    <Box key={skill.name} w="full">
+                      <HStack justify="space-between" mb={2}>
+                        <Text fontSize="sm" color="gray.300">
+                          {skill.name}
+                        </Text>
+                        <Text fontSize="sm" color="brand.400">
+                          {skill.level}%
+                        </Text>
+                      </HStack>
+                      <Box
+                        w="full"
+                        h="6px"
+                        bg="gray.700"
+                        borderRadius="full"
+                        overflow="hidden"
+                      >
+                        <MotionBox
+                          h="full"
+                          bg="linear-gradient(90deg, #2563eb 0%, #4f8fff 100%)"
+                          borderRadius="full"
+                          initial={{ width: 0 }}
+                          whileInView={{ width: `${skill.level}%` }}
+                          transition={{ duration: 1, delay: index * 0.1 }}
+                          viewport={{ once: true }}
+                        />
+                      </Box>
+                    </Box>
+                  ))}
+                </VStack>
+              </VStack>
+            </AnimatedSection>
+          </GridItem>
+        </Grid>
+
+        {/* Experience Section */}
+        <AnimatedSection delay={0.6}>
+          <VStack spacing={8} mb={20}>
+            <Heading
+              size="xl"
+              textAlign="center"
+              bgGradient="linear(to-r, brand.400, brand.600)"
+              bgClip="text"
+            >
+              Professional Experience
+            </Heading>
+            
+            <VStack spacing={6} w="full">
+              {experiences.map((exp, index) => (
+                <Card
+                  key={index}
+                  w="full"
+                  bg="gray.800"
+                  borderColor="gray.700"
+                  _hover={{
+                    borderColor: 'brand.400',
+                    transform: 'translateY(-2px)',
+                  }}
+                  transition="all 0.3s ease"
+                >
+                  <CardBody>
+                    <Grid templateColumns={{ base: '1fr', md: '2fr 1fr' }} gap={4}>
+                      <VStack align="start" spacing={2}>
+                        <Heading size="md" color="brand.400">
+                          {exp.role}
+                        </Heading>
+                        <Text fontSize="lg" color="gray.300" fontWeight="semibold">
+                          {exp.company}
+                        </Text>
+                        <Text color="gray.400">
+                          {exp.description}
+                        </Text>
+                      </VStack>
+                      <VStack align={{ base: 'start', md: 'end' }}>
+                        <Badge
+                          px={3}
+                          py={1}
+                          bg="brand.900"
+                          color="brand.400"
+                          fontSize="sm"
+                        >
+                          {exp.period}
+                        </Badge>
+                      </VStack>
+                    </Grid>
+                  </CardBody>
+                </Card>
+              ))}
+            </VStack>
+          </VStack>
+        </AnimatedSection>
+
+        {/* Fun Facts Section */}
+        <AnimatedSection delay={0.8}>
+          <Box bg="gray.900" p={8} borderRadius="xl" border="1px solid" borderColor="gray.700">
+            <VStack spacing={6}>
+              <Heading size="lg" color="brand.400">
+                Fun Facts
+              </Heading>
+              <Grid templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }} gap={6} w="full">
+                <VStack spacing={2}>
+                  <Text fontSize="2xl" color="brand.400" fontWeight="bold">
+                    50+
+                  </Text>
+                  <Text color="gray.300" textAlign="center">
+                    Projects Completed
+                  </Text>
+                </VStack>
+                <VStack spacing={2}>
+                  <Text fontSize="2xl" color="brand.400" fontWeight="bold">
+                    4+
+                  </Text>
+                  <Text color="gray.300" textAlign="center">
+                    Years Experience
+                  </Text>
+                </VStack>
+                <VStack spacing={2}>
+                  <Text fontSize="2xl" color="brand.400" fontWeight="bold">
+                    15+
+                  </Text>
+                  <Text color="gray.300" textAlign="center">
+                    Technologies Mastered
+                  </Text>
+                </VStack>
+                <VStack spacing={2}>
+                  <Text fontSize="2xl" color="brand.400" fontWeight="bold">
+                    ∞
+                  </Text>
+                  <Text color="gray.300" textAlign="center">
+                    Coffee Consumed
+                  </Text>
+                </VStack>
+              </Grid>
+            </VStack>
+          </Box>
+        </AnimatedSection>
+      </Container>
+    </Box>
+  );
+};
+
+export default AboutPage;
