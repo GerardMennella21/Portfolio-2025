@@ -7,7 +7,7 @@
 
 > **A modern, responsive portfolio website showcasing full-stack development and AI engineering expertise**
 
-**🌐 Live Demo:** [gerardmennella.dev](https://gerardmennella.dev) *(coming soon)*
+**🌐 Live Demo:** [gerardmennella.com](https://gerardmennella.com)
 
 ---
 
