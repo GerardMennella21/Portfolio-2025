@@ -302,6 +302,8 @@ const HomePage: React.FC = () => {
             </Text>
             <HStack spacing={4}>
               <Button
+                as={Link}
+                to="/contact"
                 size="lg"
                 bgGradient="linear(to-r, brand.400, brand.600)"
                 color="white"

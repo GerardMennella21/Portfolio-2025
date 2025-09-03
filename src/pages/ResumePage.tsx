@@ -16,6 +16,7 @@ import {
   ListItem,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { usePageSEO } from '../hooks/usePageSEO';
 import { DownloadIcon, EmailIcon } from '@chakra-ui/icons';
@@ -113,6 +114,8 @@ const ResumePage: React.FC = () => {
               size="2xl"
               bgGradient="linear(to-r, brand.400, brand.600)"
               bgClip="text"
+              lineHeight="1.3"
+              py={2}
             >
               Resume
             </Heading>
@@ -137,6 +140,8 @@ const ResumePage: React.FC = () => {
                 Download PDF
               </Button>
               <Button
+                as={Link}
+                to="/contact"
                 leftIcon={<EmailIcon />}
                 variant="outline"
                 borderColor="brand.400"

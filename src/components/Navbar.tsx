@@ -72,6 +72,7 @@ const Navbar: React.FC = () => {
     { name: 'About', path: '/about' },
     { name: 'Resume', path: '/resume' },
     { name: 'Projects', path: '/projects' },
+    { name: 'Contact', path: '/contact' },
   ];
 
   useEffect(() => {

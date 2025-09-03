@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import './styles/main.scss';
+import { useScrollToTop } from './hooks/useScrollToTop';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -9,6 +10,7 @@ import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ResumePage from './pages/ResumePage';
 import ProjectsPage from './pages/ProjectsPage';
+import ContactPage from './pages/ContactPage';
 
 const theme = extendTheme({
   config: {
@@ -36,6 +38,8 @@ const theme = extendTheme({
 });
 
 const App: React.FC = () => {
+  useScrollToTop();
+  
   return (
     <ChakraProvider theme={theme}>
       <div className="App">
@@ -46,6 +50,7 @@ const App: React.FC = () => {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/resume" element={<ResumePage />} />
             <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/contact" element={<ContactPage />} />
           </Routes>
         </main>
         <Footer />

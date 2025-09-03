@@ -126,6 +126,8 @@ const AboutPage: React.FC = () => {
               size="2xl"
               bgGradient="linear(to-r, brand.400, brand.600)"
               bgClip="text"
+              lineHeight="1.3"
+              py={2}
             >
               About Me
             </Heading>
