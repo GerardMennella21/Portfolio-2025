@@ -53,12 +53,36 @@ const HomePage: React.FC = () => {
       {/* Hero Section */}
       <Container maxW="1200px" py={20}>
         <MotionVStack
-          spacing={6}
+          spacing={8}
           textAlign="center"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
+          <MotionBox
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
+            <Box
+              as="img"
+              src="/images/headshot.png"
+              alt="Gerard Mennella"
+              w={{ base: "150px", md: "180px" }}
+              h={{ base: "150px", md: "180px" }}
+              borderRadius="full"
+              objectFit="cover"
+              border="4px solid"
+              borderColor="brand.400"
+              boxShadow="0 8px 32px rgba(37, 99, 235, 0.3)"
+              transition="all 0.3s ease"
+              _hover={{
+                transform: "scale(1.05)",
+                boxShadow: "0 12px 40px rgba(37, 99, 235, 0.4)",
+              }}
+            />
+          </MotionBox>
+          
           <MotionText
             fontSize={{ base: '3xl', md: '5xl', lg: '6xl' }}
             fontWeight="bold"

@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
 
           <HStack spacing={4}>
             <Link
-              href="mailto:gerard@example.com"
+              href="mailto:gerardmennella21@gmail.com"
               isExternal
               color="gray.400"
               _hover={{ color: "brand.400", transform: "translateY(-2px)" }}
@@ -53,7 +53,7 @@ const Footer: React.FC = () => {
               Email <ExternalLinkIcon mx="2px" />
             </Link>
             <Link
-              href="https://linkedin.com/in/gerardmennella"
+              href="https://www.linkedin.com/in/gerard-mennella-68467b22b/"
               isExternal
               color="gray.400"
               _hover={{ color: "brand.400", transform: "translateY(-2px)" }}
@@ -62,7 +62,7 @@ const Footer: React.FC = () => {
               LinkedIn <ExternalLinkIcon mx="2px" />
             </Link>
             <Link
-              href="https://github.com/gerardmennella"
+              href="https://github.com/gerardmennella21"
               isExternal
               color="gray.400"
               _hover={{ color: "brand.400", transform: "translateY(-2px)" }}

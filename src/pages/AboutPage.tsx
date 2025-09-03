@@ -58,22 +58,16 @@ const AboutPage: React.FC = () => {
 
   const experiences = [
     {
-      role: 'Senior Full Stack Developer',
-      company: 'Tech Innovation Corp',
-      period: '2022 - Present',
-      description: 'Leading development of AI-powered web applications using React, Node.js, and OpenAI API.',
+      role: 'Lead Full Stack AI Engineer',
+      company: 'Capco',
+      period: '2023 - Present',
+      description: 'Leading AI engineering consultant for top-tier financial clients, architecting 8+ full-stack AI applications that generated over $2M in new business opportunities.',
     },
     {
-      role: 'Full Stack Developer',
-      company: 'Digital Solutions LLC',
-      period: '2020 - 2022',
-      description: 'Built scalable web applications and REST APIs serving thousands of users.',
-    },
-    {
-      role: 'Frontend Developer',
-      company: 'Creative Agency',
-      period: '2019 - 2020',
-      description: 'Created responsive, interactive websites using modern JavaScript frameworks.',
+      role: 'Full-Stack Web Development Instructional Specialist',
+      company: 'edX/2U',
+      period: '2022 - 2025',
+      description: 'Mentoring 200+ students across multiple cohorts in full-stack MERN development while maintaining 95%+ student satisfaction ratings through personalized instruction and technical support.',
     },
   ];
 
@@ -82,7 +76,52 @@ const AboutPage: React.FC = () => {
       <Container maxW="1200px" py={12}>
         {/* Header Section */}
         <AnimatedSection>
-          <VStack spacing={6} textAlign="center" mb={20}>
+          <VStack spacing={8} textAlign="center" mb={20}>
+            <MotionBox
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <Box
+                position="relative"
+                display="inline-block"
+              >
+                <Box
+                  as="img"
+                  src="/images/headshot.png"
+                  alt="Gerard Mennella"
+                  w="200px"
+                  h="200px"
+                  borderRadius="full"
+                  objectFit="cover"
+                  border="4px solid"
+                  borderColor="brand.400"
+                  boxShadow="0 8px 32px rgba(37, 99, 235, 0.3)"
+                  transition="all 0.3s ease"
+                  _hover={{
+                    transform: "scale(1.05)",
+                    boxShadow: "0 12px 40px rgba(37, 99, 235, 0.4)",
+                  }}
+                />
+                <Box
+                  position="absolute"
+                  bottom={2}
+                  right={2}
+                  w="40px"
+                  h="40px"
+                  bg="green.400"
+                  borderRadius="full"
+                  border="3px solid"
+                  borderColor="gray.900"
+                  display="flex"
+                  alignItems="center"
+                  justifyContent="center"
+                >
+                  <Text fontSize="lg">👋</Text>
+                </Box>
+              </Box>
+            </MotionBox>
+            
             <Heading
               size="2xl"
               bgGradient="linear(to-r, brand.400, brand.600)"
@@ -91,9 +130,10 @@ const AboutPage: React.FC = () => {
               About Me
             </Heading>
             <Text fontSize="lg" color="gray.300" maxW="800px" lineHeight="tall">
-              I'm a passionate Full Stack Gen AI Engineer with over 4 years of experience
-              building exceptional digital experiences. I specialize in creating innovative
-              solutions that combine traditional web development with cutting-edge AI technologies.
+              I'm a passionate Lead Full Stack AI Engineer currently at Capco, where I serve as 
+              an AI engineering consultant for top-tier financial clients. I specialize in creating 
+              innovative AI-powered solutions that have generated over $2M in new business opportunities 
+              while also mentoring the next generation of developers through my role at edX/2U.
             </Text>
           </VStack>
         </AnimatedSection>
@@ -109,23 +149,24 @@ const AboutPage: React.FC = () => {
                 </Heading>
                 
                 <Text color="gray.300" lineHeight="tall">
-                  My journey in technology started with a fascination for solving complex problems
-                  through code. Over the years, I've evolved from a curious developer to a seasoned
-                  engineer who thrives on pushing the boundaries of what's possible with modern web
-                  technologies.
+                  My journey began with completing the Full Stack Web Development program at UCF, 
+                  which opened the door to my current role as a Lead Full Stack AI Engineer at Capco. 
+                  There, I've had the privilege of working with top-tier financial clients, architecting 
+                  AI solutions that have directly contributed to generating over $2 million in new business.
                 </Text>
 
                 <Text color="gray.300" lineHeight="tall">
-                  The emergence of AI and machine learning has opened up incredible opportunities
-                  to create more intelligent, adaptive, and user-centric applications. I've dedicated
-                  significant time to mastering these technologies and integrating them seamlessly
-                  into full-stack solutions.
+                  What drives me most is the intersection of education and innovation. Through my role 
+                  at edX/2U, I've been able to mentor over 200 aspiring developers across multiple cohorts, 
+                  maintaining a 95%+ student satisfaction rating. There's nothing quite like seeing someone 
+                  grasp a complex concept and apply it to build something meaningful.
                 </Text>
 
                 <Text color="gray.300" lineHeight="tall">
-                  When I'm not coding, you can find me exploring the latest tech trends, contributing
-                  to open-source projects, or sharing knowledge with the developer community. I believe
-                  in continuous learning and the power of collaboration to drive innovation.
+                  My expertise spans from developing autonomous AI agents for portfolio analysis to 
+                  implementing secure RAG patterns with AWS Bedrock and Azure OpenAI. I'm passionate 
+                  about pushing the boundaries of what's possible when you combine traditional full-stack 
+                  development with cutting-edge AI technologies.
                 </Text>
 
                 <Divider borderColor="gray.700" />
@@ -273,34 +314,34 @@ const AboutPage: React.FC = () => {
               <Grid templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }} gap={6} w="full">
                 <VStack spacing={2}>
                   <Text fontSize="2xl" color="brand.400" fontWeight="bold">
-                    50+
+                    $2M+
                   </Text>
                   <Text color="gray.300" textAlign="center">
-                    Projects Completed
+                    Business Generated
                   </Text>
                 </VStack>
                 <VStack spacing={2}>
                   <Text fontSize="2xl" color="brand.400" fontWeight="bold">
-                    4+
+                    200+
                   </Text>
                   <Text color="gray.300" textAlign="center">
-                    Years Experience
+                    Students Mentored
                   </Text>
                 </VStack>
                 <VStack spacing={2}>
                   <Text fontSize="2xl" color="brand.400" fontWeight="bold">
-                    15+
+                    8+
                   </Text>
                   <Text color="gray.300" textAlign="center">
-                    Technologies Mastered
+                    AI Apps Built
                   </Text>
                 </VStack>
                 <VStack spacing={2}>
                   <Text fontSize="2xl" color="brand.400" fontWeight="bold">
-                    ∞
+                    95%+
                   </Text>
                   <Text color="gray.300" textAlign="center">
-                    Coffee Consumed
+                    Student Satisfaction
                   </Text>
                 </VStack>
               </Grid>

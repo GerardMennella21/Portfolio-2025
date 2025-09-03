@@ -43,65 +43,55 @@ const AnimatedSection: React.FC<{
 const ResumePage: React.FC = () => {
   usePageSEO({
     title: 'Resume',
-    description: 'View Gerard Mennella\'s professional resume and experience as a Full Stack Gen AI Engineer. Download CV and explore technical skills.',
-    keywords: 'Gerard Mennella, Resume, CV, Full Stack Developer, Gen AI Engineer, Experience, Skills, Employment',
-    ogTitle: 'Gerard Mennella Resume - Full Stack Gen AI Engineer',
-    ogDescription: 'Professional resume showcasing 4+ years of experience in full-stack development and AI integration.'
+    description: 'View Gerard Mennella\'s professional resume featuring experience as Lead Full Stack AI Engineer at Capco and Instructional Specialist at edX/2U.',
+    keywords: 'Gerard Mennella, Resume, CV, Capco, edX, Lead AI Engineer, Full Stack Developer, Gen AI Engineer, Experience, Skills, Employment',
+    ogTitle: 'Gerard Mennella Resume - Lead Full Stack AI Engineer',
+    ogDescription: 'Professional resume showcasing leadership in AI engineering at top-tier financial firms and educational excellence in full-stack development.'
   });
   const experiences = [
     {
-      role: 'Senior Full Stack Gen AI Engineer',
-      company: 'Tech Innovation Corp',
-      period: '2022 - Present',
+      role: 'Lead Full Stack AI Engineer',
+      company: 'Capco',
+      period: 'May 2023 - Present',
       location: 'Remote',
       achievements: [
-        'Led development of AI-powered web applications serving 10K+ users',
-        'Integrated OpenAI GPT models with React/Node.js applications',
-        'Improved application performance by 40% through optimization techniques',
-        'Mentored junior developers and established coding standards',
+        'Served as lead AI engineering consultant for top-tier financial clients, including a major Wealth and Asset Management firm',
+        'Architected and led the development of 8+ full-stack AI applications (React, Node.js, LLMs), directly generating over $2M in new business opportunities',
+        'Developed and integrated autonomous AI agents into client platforms to automate portfolio analysis, client reporting, and internal workflows',
+        'Engineered and implemented secure Retrieval-Augmented Generation (RAG) patterns using AWS Bedrock and Azure OpenAI for sensitive financial data',
+        'Drove a 40% improvement in process automation for client operations by pioneering innovative natural language processing applications',
+        'Directed international, cross-functional teams in an Agile/Scrum environment, managing stakeholder relationships and ensuring timely delivery of localized AI solutions',
+        'Received a SPOT award for consistently exceeding client expectations through the delivery of high-impact AI solutions',
       ],
     },
     {
-      role: 'Full Stack Developer',
-      company: 'Digital Solutions LLC',
-      period: '2020 - 2022',
-      location: 'New York, NY',
+      role: 'Full-Stack Web Development Instructional Specialist',
+      company: 'edX/2U',
+      period: 'November 2022 - July 2025',
+      location: 'Remote',
       achievements: [
-        'Built and maintained 15+ client web applications using React and Node.js',
-        'Designed and implemented RESTful APIs serving millions of requests',
-        'Collaborated with cross-functional teams to deliver projects on time',
-        'Reduced deployment time by 60% through CI/CD pipeline implementation',
-      ],
-    },
-    {
-      role: 'Frontend Developer',
-      company: 'Creative Agency',
-      period: '2019 - 2020',
-      location: 'Los Angeles, CA',
-      achievements: [
-        'Developed responsive websites for 20+ clients using React and Vue.js',
-        'Improved website loading speeds by 50% through performance optimization',
-        'Implemented modern UI/UX designs with attention to accessibility',
-        'Worked closely with designers to translate mockups into pixel-perfect interfaces',
+        'Mentor 200+ students across multiple cohorts in mastering full-stack MERN development, providing technical leadership and 1-on-1 guidance',
+        'Conduct comprehensive code reviews for student projects, enforcing industry best practices in React, Node.js, and data structures',
+        'Develop and deliver supplemental curriculum content to enhance student learning outcomes',
+        'Maintain 95%+ student satisfaction ratings through personalized instruction and technical support',
       ],
     },
   ];
 
   const education = [
     {
-      degree: 'Bachelor of Science in Computer Science',
-      school: 'University of Technology',
-      period: '2015 - 2019',
-      gpa: '3.8/4.0',
-      honors: 'Magna Cum Laude',
+      degree: 'Full Stack Web Development Certificate',
+      school: 'University of Central Florida Coding Boot Camp (edX/2U)',
+      period: '2022',
+      gpa: '',
+      honors: 'Completed',
     },
   ];
 
   const certifications = [
-    'AWS Certified Solutions Architect',
-    'OpenAI API Specialist',
-    'Google Cloud Professional Developer',
-    'Meta React Developer Professional',
+    'Full-Stack Web Development Certificate - UCF Coding Boot Camp',
+    'Certified Full-Stack Web Development Instructional Specialist - edX/2U',
+    'Certified Gen AI Specialist - edX/2U'
   ];
 
   const skills = {
@@ -132,6 +122,9 @@ const ResumePage: React.FC = () => {
             </Text>
             <HStack spacing={4}>
               <Button
+                as="a"
+                href="/documents/Gerard-Mennella-Resume.pdf"
+                download="Gerard-Mennella-Resume.pdf"
                 leftIcon={<DownloadIcon />}
                 bgGradient="linear(to-r, brand.400, brand.600)"
                 color="white"
@@ -241,12 +234,16 @@ const ResumePage: React.FC = () => {
                           <Badge bg="brand.900" color="brand.400">
                             {edu.period}
                           </Badge>
-                          <Badge bg="gray.700" color="gray.300">
-                            GPA: {edu.gpa}
-                          </Badge>
-                          <Badge bg="gray.700" color="gray.300">
-                            {edu.honors}
-                          </Badge>
+                          {edu.gpa && (
+                            <Badge bg="gray.700" color="gray.300">
+                              GPA: {edu.gpa}
+                            </Badge>
+                          )}
+                          {edu.honors && (
+                            <Badge bg="gray.700" color="gray.300">
+                              {edu.honors}
+                            </Badge>
+                          )}
                         </HStack>
                       </VStack>
                     </CardBody>
@@ -268,14 +265,14 @@ const ResumePage: React.FC = () => {
                         Contact Information
                       </Heading>
                       <VStack align="start" spacing={2} fontSize="sm">
-                        <Text color="gray.300">📧 gerard@example.com</Text>
-                        <Text color="gray.300">📱 (555) 123-4567</Text>
-                        <Text color="gray.300">📍 New York, NY</Text>
+                        <Text color="gray.300">📧 gerardmennella21@gmail.com</Text>
+                        <Text color="gray.300">📱 (407) 848-9735</Text>
+                        <Text color="gray.300">📍 Orlando, FL</Text>
                         <HStack spacing={2}>
                           <Text color="gray.300">🔗</Text>
                           <Text
                             as="a"
-                            href="https://linkedin.com/in/gerardmennella"
+                            href="https://www.linkedin.com/in/gerard-mennella-68467b22b/"
                             color="brand.400"
                             _hover={{ textDecoration: 'underline' }}
                           >
@@ -286,7 +283,7 @@ const ResumePage: React.FC = () => {
                           <Text color="gray.300">💻</Text>
                           <Text
                             as="a"
-                            href="https://github.com/gerardmennella"
+                            href="https://github.com/gerardmennella21"
                             color="brand.400"
                             _hover={{ textDecoration: 'underline' }}
                           >
